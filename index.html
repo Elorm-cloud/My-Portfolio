@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Strategist | PR & Advertising Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #f39c12;
+            --text-light: #ecf0f1;
+            --text-dark: #2c3e50;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--primary-color) !important;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.6s both;
+            max-width: 600px;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .btn-custom:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+            color: white;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-elements div {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-elements div:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-elements div:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-elements div:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-2);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: none;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .skill-card h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .featured-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.08);
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .featured-card:hover {
+            box-shadow: 0 16px 48px rgba(44,62,80,0.18);
+            transform: translateY(-8px) scale(1.02);
+        }
+        .featured-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+        }
+        .btn-view-project {
+            background: var(--secondary-color);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 2rem;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 16px rgba(231,76,60,0.10);
+            border: none;
+            transition: background 0.2s, transform 0.2s;
+            margin-top: auto;
+        }
+        .btn-view-project:hover {
+            background: #c0392b;
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            background: white;
+            height: 400px;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-img .placeholder-icon {
+            font-size: 4rem;
+            color: white;
+            z-index: 2;
+        }
+
+        .portfolio-img.aisle28 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+        .portfolio-img.koa { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .portfolio-img.sealine { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .portfolio-img.handkrafted { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+        .portfolio-img.nyansapo { background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%); }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-content {
+            padding: 30px;
+        }
+
+        .portfolio-content h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .portfolio-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-actions {
+            display: flex !important;
+            gap: 10px;
+            flex-wrap: wrap;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .portfolio-actions button {
+            display: inline-block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            padding: 10px 20px;
+            margin: 5px 0;
+            font-size: 1rem;
+            border-radius: 30px;
+            border: none;
+        }
+
+        .btn-portfolio {
+            display: inline-block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .btn-view {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-view:hover {
+            background: #c0392b;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-drive {
+            background: #4285f4;
+            color: white;
+        }
+
+        .btn-drive:hover {
+            background: #3367d6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .portfolio-overlay .overlay-content {
+            text-align: center;
+            color: white;
+        }
+
+        .portfolio-overlay .overlay-content h5 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .portfolio-overlay .btn-portfolio {
+            margin: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--gradient-3);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .contact-item h5 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            line-height: 60px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-item {
+                height: auto;
+            }
+            
+            .portfolio-img {
+                height: 200px;
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn-custom {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .skill-card, .portfolio-item {
+            opacity: 1;
+            transform: none;
+            transition: all 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Creative</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-elements">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1>Michael Elorm Ntumy</h1>
+                        <p class="subtitle">PR & Advertising</p>
+                        <p class="description">
+                            Transforming brand visions into compelling narratives that resonate, engage, and convert ideas from concept to execution, I craft visual stories that make brands unforgettable.
+                        </p>
+                        <a href="#portfolio" class="btn btn-custom">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    Every brand has a story, and I'm the one who makes sure it gets told right. From crafting mouthwatering content for Aisle 28, tech-driven campaigns for KOA Tech, stunning visuals for Sealine View Hotel, and curating the vintage charm of Handkrafted, to most recently spotlighting innovation at Nyansapo Institute, I thrive on adapting my creative vision to every unique brand voice.
+                </p>
+                <br>
+                <p>
+                    Whether it's food, technology, hospitality, antiques, or STEM, I know how to connect with audiences and deliver content that not only looks good but also performs effectively. My versatility, creativity, and ability to quickly understand a brand's DNA are what set me apart.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">What I Do</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon gradient-icon gradient-1">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Visual Design</h4>
+                        <p>Creating stunning graphics, illustrations, and visual content that captures attention and communicates brand messages effectively across all platforms.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon gradient-icon gradient-2">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                        <h4>Photo Editing</h4>
+                        <p>Expert photo manipulation and enhancement using advanced editing techniques to transform ordinary images into extraordinary brand assets.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon gradient-icon gradient-3">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h4>Brand Strategy</h4>
+                        <p>Developing comprehensive PR and advertising strategies that align with brand values and resonate with target audiences across multiple channels.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon gradient-icon gradient-4">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Campaign Management</h4>
+                        <p>End-to-end campaign execution from concept development to performance analysis, ensuring maximum ROI and brand impact.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon gradient-icon gradient-5">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Social Media</h4>
+                        <p>Creating engaging social media content and managing brand presence across platforms to build communities and drive engagement.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <div class="skill-icon gradient-icon gradient-6">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Creative Direction</h4>
+                        <p>Leading creative projects from ideation to execution, ensuring consistent brand messaging and innovative visual storytelling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="row g-4">
+                <!-- Aisle 28 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="featured-card shadow-sm rounded-4 h-100 d-flex flex-column">
+                        <img src="images/Aisle 28/2.png" alt="Aisle 28 Project" class="featured-img rounded-top-4 object-fit-cover">
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <h4 class="mb-2">Aisle 28</h4>
+                            <p class="mb-4">Crafted mouthwatering visual content and social media campaigns that increased engagement by 150% and drove significant food traffic to this premium food destination.</p>
+                            <button class="btn btn-view btn-view-project mt-auto" data-project="aisle28">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- KOA Tech -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="featured-card shadow-sm rounded-4 h-100 d-flex flex-column">
+                        <img src="images/KOA Tech/KOA Apple watch.png" alt="KOA Tech Project" class="featured-img rounded-top-4 object-fit-cover">
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <h4 class="mb-2">KOA Tech</h4>
+                            <p class="mb-4">Developed tech-focused advertising campaigns and visual identity that positioned KOA Tech as an industry innovator, resulting in 200% increase in leads.</p>
+                            <button class="btn btn-view btn-view-project mt-auto" data-project="koa">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sealine View Hotel -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="featured-card shadow-sm rounded-4 h-100 d-flex flex-column">
+                        <img src="images/Sealine View Hotel/Sealine View Image.png" alt="Sealine View Hotel Project" class="featured-img rounded-top-4 object-fit-cover">
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <h4 class="mb-2">Sealine View Hotel</h4>
+                            <p class="mb-4">Created stunning hospitality visuals and promotional materials that enhanced brand perception and increased booking rates during peak season by 75%.</p>
+                            <button class="btn btn-view btn-view-project mt-auto" data-project="sealine">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Handkrafted -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="featured-card shadow-sm rounded-4 h-100 d-flex flex-column">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Handkrafted Project" class="featured-img rounded-top-4 object-fit-cover">
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <h4 class="mb-2">Handkrafted</h4>
+                            <p class="mb-4">Curated vintage-inspired visual campaigns that perfectly captured the essence of antique craftsmanship, leading to 120% growth in online sales.</p>
+                            <a class="btn btn-view btn-view-project mt-auto" href="https://drive.google.com/file/d/1EqVLVNj2GHdhHt_0XMdMtpz8-qCZ9V1s/view?usp=drive_link" target="_blank">
+                                <i class="fas fa-eye"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Nyansapo Institute -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="featured-card shadow-sm rounded-4 h-100 d-flex flex-column">
+                        <img src="images/Nyansapo Institute/Cyber.png" alt="Nyansapo Institute Project" class="featured-img rounded-top-4 object-fit-cover">
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <h4 class="mb-2">Nyansapo Institute</h4>
+                            <p class="mb-4">Spotlighted STEM innovation through compelling visual storytelling and educational content that increased program enrollment by 180%.</p>
+                            <button class="btn btn-view btn-view-project mt-auto" data-project="nyansapo">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- More Projects (Food) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="featured-card shadow-sm rounded-4 h-100 d-flex flex-column">
+                        <img src="images/jazz/Aisle 28 Jazz(1 day to go).png" alt="More Projects" class="featured-img rounded-top-4 object-fit-cover">
+                        <div class="p-4 flex-grow-1 d-flex flex-column">
+                            <h4 class="mb-2">More Projects</h4>
+                            <p class="mb-4">Explore additional case studies showcasing diverse industry expertise and creative solutions that drive measurable business results.</p>
+                            <button class="btn btn-view btn-view-project mt-auto" data-project="food">
+                                <i class="fas fa-eye"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="projectModalBody">
+            <!-- Dynamic content will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Create Together</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row text-center">
+                        <div class="col-md-6">
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <h5>LinkedIn</h5>
+                                <p><a href="https://www.linkedin.com/in/elorm-ntumy-a26280280" target="_blank" style="color: #fff; text-decoration: underline;">elorm-ntumy-a26280280</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-item">
+                                <i class="fab fa-instagram"></i>
+                                <h5>Instagram</h5>
+                                <p><a href="https://www.instagram.com/e.l.0.r.m?igsh=MWZ6Y3MyYWhybDFwcQ%3D%3D&utm_source=qr" target="_blank" style="color: #fff; text-decoration: underline;">@e.l.0.r.m</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/elorm-ntumy-a26280280" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/e.l.0.r.m?igsh=MWZ6Y3MyYWhybDFwcQ%3D%3D&utm_source=qr" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Creative Portfolio. Crafted with passion for exceptional brands.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Portfolio item hover effects
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Pause videos in modal when closed
+        document.getElementById('projectModal').addEventListener('hidden.bs.modal', function () {
+            document.querySelectorAll('#projectModalBody video').forEach(video => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        // Project modal functionality
+        const projects = {
+            aisle28: {
+                title: "Aisle 28",
+                description: "Crafted mouthwatering visual content and social media campaigns that increased engagement by 150% and drove significant foot traffic to this premium food destination.",
+                images: [
+                    "images/Aisle/2.png",
+                    "images/Aisle/Acity Juicee-10211100261.png",
+                    "images/Aisle/Entres.png",
+                    "images/Aisle/photo_2024-07-01_12-52-08.png",
+                    "images/Aisle/Salad.png",
+                    "images/Aisle/Vought a Burger.psd"
+                ],
+            },
+            koa: {
+                title: "KOA Tech",
+                description: "Developed tech-focused advertising campaigns and visual identity that positioned KOA Tech as an industry innovator, resulting in 200% increase in leads.",
+                images: [
+                    "images/KOA Tech/Happy new month.png",
+                    "images/KOA Tech/KOA Apple watch.png"
+                ],
+                videos: []
+            },
+            sealine: {
+                title: "Sealine View Hotel",
+                description: "Created stunning hospitality visuals and promotional materials that enhanced brand perception and increased booking rates during peak season by 75%.",
+                images: [
+                    "images/Sealine View Hotel/Sealine View Image.png"
+                ],
+                videos: [
+                    "images/Sealine View Hotel/Sealine View - Massage Video.mp4",
+                    "images/Sealine View Hotel/SV Room tour.mp4",
+                    "images/Sealine View Hotel/Sealine View Drinks.mp4"
+                ]
+            },
+            handkrafted: {
+                title: "Handkrafted",
+                description: "Curated vintage-inspired visual campaigns that perfectly captured the essence of antique craftsmanship, leading to 120% growth in online sales.",
+                images: [
+                    "images/handkrafted/cover.jpg",
+                    "images/handkrafted/1.jpg"
+                ],
+                videos: []
+            },
+            nyansapo: {
+                title: "Nyansapo Institute",
+                description: "Spotlighted STEM innovation through compelling visual storytelling and educational content that increased program enrollment by 180%.",
+                images: [
+                    "images/Nyansapo Institute/Cyber.png",
+                    "images/Nyansapo Institute/Game Dev.png"
+                ],
+                videos: []
+            },
+            food: {
+                title: "More Projects",
+                description: "Explore additional case studies showcasing diverse industry expertise and creative solutions that drive measurable business results.",
+                images: [
+                   "images/jazz/Aisle 28 Jazz(1 day to go).png",
+                ],
+                videos: [
+                    "images/jazz/Aisle 28 Jazz.mp4",
+                ]
+            }
+        };
+
+        document.querySelectorAll('.btn-view').forEach(button => {
+            button.addEventListener('click', function() {
+                const projectKey = this.getAttribute('data-project');
+                const project = projects[projectKey];
+
+                if (project) {
+                    let mediaHtml = '';
+                    if (project.images && project.images.length > 0) {
+                        mediaHtml += '<div class="row g-2 mb-3">';
+                        project.images.forEach(img => {
+                            mediaHtml += `<div class='col-12 col-md-6'><img src="${img}" alt="${project.title} Image" class="img-fluid rounded mb-2 w-100"></div>`;
+                        });
+                        mediaHtml += '</div>';
+                    }
+                    if (project.videos && project.videos.length > 0) {
+                        mediaHtml += '<div class="row g-2 mb-3">';
+                        project.videos.forEach(vid => {
+                            mediaHtml += `<div class='col-12'><video controls class="w-100 mb-2 rounded"><source src="${vid}" type="video/mp4">Your browser does not support the video tag.</video></div>`;
+                        });
+                        mediaHtml += '</div>';
+                    }
+                    document.getElementById('projectModalLabel').textContent = project.title;
+                    document.getElementById('projectModalBody').innerHTML = `
+                        ${mediaHtml}
+                        <p>${project.description}</p>
+                    `;
+                    const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+                    modal.show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
